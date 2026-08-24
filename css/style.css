@@ -1,0 +1,123 @@
+*{
+    overflow: hidden;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.place{
+    position: relative;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    border: 1px solid black;
+    width: min(800px, 100%);
+    height: 99.8vh;
+}
+
+.score{
+    font-weight: 800;
+    font-size: 30px;
+    z-index: 3;
+    height: min-content;
+    text-align: center;
+}
+
+.bird--place{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 0; right: 0;top: 0;bottom: 0;
+}
+.bird{
+    transform: translateY(300px);
+    transition: transform 0.3s ease-out;
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    background-color: red;
+    z-index: 2;
+}
+
+.barrier{
+    position: absolute;
+    left: 0px;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    column-gap: 250px;
+    transform: translateX(550px);
+    /* border: 2px solid black; */
+    height: 99.8vh;;
+}
+.bar{
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    transform: translateX(0);
+    /* border: 2px solid black; */
+}
+.elem{
+    /* border: 1px solid black; */
+    background-color: rgb(139, 157, 241);
+}
+.elem.void{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* меню */
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    z-index: 3;
+    border: 2px solid black;
+    width: 350px;
+    height: 350px;
+    background-color: white;
+}
+
+.gameStop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gamePlay{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.pause{
+    display: none;
+    position: absolute;
+    top: 30px;
+    z-index: 99;
+}
+
+.play{
+    display: inline-block;
+}
+
+button{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    font-size: 35px;
+}
